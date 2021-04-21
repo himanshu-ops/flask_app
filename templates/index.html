@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Loan Deafaulters prediction App</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="AMT_ANNUITY" placeholder="AMT_ANNUITY" required="AMT_ANNUITY" />
+        <input type="text" name="NAME_CONTRACT_TYPE" placeholder="NAME_CONTRACT_TYPE" required="NAME_CONTRACT_TYPE" />
+		<input type="text" name="FLAG_OWN_CAR" placeholder="FLAG_OWN_CAR" required="FLAG_OWN_CAR" />
+        <input type="text" name="FLAG_OWN_REALTY" placeholder="FLAG_OWN_REALTY" required="FLAG_OWN_REALTY" />
+        <input type="text" name="AMT_INCOME_TOTAL" placeholder="AMT_INCOME_TOTAL" required="AMT_INCOME_TOTAL" />
+        <input type="text" name="NAME_HOUSING_TYPE" placeholder="NAME_HOUSING_TYPE" required="NAME_HOUSING_TYPE" />
+        <input type="text" name="OCCUPATION_TYPE" placeholder="OCCUPATION_TYPE" required="OCCUPATION_TYPE" />
+        <input type="text" name="ORGANIZATION_TYPE" placeholder="ORGANIZATION_TYPE" required="ORGANIZATION_TYPE" />
+        <input type="text" name="CODE_GENDER" placeholder="CODE_GENDER" required="CODE_GENDER" />
+        <input type="text" name="AMT_CREDIT" placeholder="AMT_CREDIT" required="AMT_CREDIT" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
